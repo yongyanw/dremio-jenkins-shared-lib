@@ -6,6 +6,6 @@ Implements the global functions for Jenkins jobs.
 
 Remove 'refs/' from a git branch
 
-## getRefspec
+## getGitRefspec
 
-Get refsec for a git branch
+Get git refspec for a git branch
