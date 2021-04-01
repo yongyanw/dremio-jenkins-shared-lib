@@ -2,6 +2,7 @@
 
 /* Get git refspec from a git branch */
 def getRefspec(String gitBranch) {
+  gitBranch = removeRefs(gitBranch)
   if (gitBranch.startsWith("changes/")) {
     return "refs/${gitBranch}:refs/remotes/origin/${gitBranch}"
   } else {
