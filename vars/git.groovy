@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 /* Get git refspec from a git branch */
-def getGitRefspec(String gitBranch) {
+def getRefspec(String gitBranch) {
   if (gitBranch.startsWith("changes/")) {
     return "refs/${gitBranch}:refs/remotes/origin/${gitBranch}"
   } else {
