@@ -5,8 +5,10 @@ def getRefspec(String gitBranch) {
   gitBranch = removeRefs(gitBranch)
   if (gitBranch.startsWith("changes/")) {
     return "refs/${gitBranch}:refs/remotes/origin/${gitBranch}"
-  } else {
+  } else if (gitBranch.equals("master") || gitBranch.startsWith("releases/") || gitBranch.startsWith("sandbox/")) {
     return "+refs/heads/${gitBranch}"
+  } else {
+    return "+refs/heads/*:refs/remotes/origin/*"
   }
 }
 
